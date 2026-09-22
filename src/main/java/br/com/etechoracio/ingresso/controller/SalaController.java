@@ -20,4 +20,13 @@ public class SalaController {
         return salaService.listarSalaAtiva();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<SalaResponseDTO> findById(@PathVariable Long id){
+        var result = salaService.findById(id);
+        if(result != null){
+            return ResponseEntity.ok(result);
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+
 }

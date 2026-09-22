@@ -14,7 +14,8 @@ import java.util.function.LongConsumer;
 @RestController
 @RequestMapping("/filmes")
 @CrossOrigin("*")
-public class FilmeController {
+public class
+FilmeController {
 
     @Autowired
     private FilmeService filmeService;

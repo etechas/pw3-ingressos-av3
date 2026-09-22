@@ -9,4 +9,5 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface SalaMapper {
     List<SalaResponseDTO> toSalasResponseDTO(List<Sala> entities);
+    SalaResponseDTO toSalaResponseDTO(Sala entity);
 }

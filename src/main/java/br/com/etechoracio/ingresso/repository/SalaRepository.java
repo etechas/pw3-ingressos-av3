@@ -10,4 +10,5 @@ import java.util.List;
 public interface SalaRepository extends JpaRepository<Sala, Long> {
 
     List<Sala> findByDataExclusaoIsNull();
+    Sala findByIdSalaAndDataExclusaoIsNull(Long idSala);
 }

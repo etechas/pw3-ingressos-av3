@@ -5,6 +5,8 @@ import br.com.etechoracio.ingresso.entity.Sala;
 import br.com.etechoracio.ingresso.mapper.SalaMapper;
 import br.com.etechoracio.ingresso.repository.SalaRepository;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,5 +23,10 @@ public class SalaService {
         List<Sala> salas = salaRepository.findByDataExclusaoIsNull();
 
         return salaMapper.toResponseDTO(salas);
+    }
+
+    public Optional<SalaResponseDTO> buscarPorId(Long id) {
+        return salaRepository.findByIdAndDataExclusaoIsNull(id)
+                .map(salaMapper::toResponseDTO);
     }
 }

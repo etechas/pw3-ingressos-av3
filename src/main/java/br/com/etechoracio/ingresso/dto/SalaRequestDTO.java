@@ -1,10 +1,7 @@
 package br.com.etechoracio.ingresso.dto;
 
-
-public record SalaResponseDTO(
-        Long id,
+public record SalaRequestDTO(
         String nome,
         Double preco
 ) {
 }
-

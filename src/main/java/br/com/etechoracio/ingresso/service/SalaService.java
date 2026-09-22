@@ -24,4 +24,9 @@ public class SalaService {
         return  salaMapper.toRespostaDTOList(result);
     }
 
+    public SalaResponseDTO findById(Long id){
+        var result = salaRepository.findByIdAndDataExclusaoIsNull(id).orElseThrow(() -> new RuntimeException("A sala nao foi encontrada!"));
+        return salaMapper.toRespostaDTO(result);
+    }
+    
 }

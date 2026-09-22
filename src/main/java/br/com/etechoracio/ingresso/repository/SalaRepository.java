@@ -8,8 +8,7 @@ import java.util.List;
 
 public interface SalaRepository extends JpaRepository<Sala, Long>
 {
-    @Query("SELECT s FROM Sala s join fetch s.sessao WHERE s.filme.id = :idFilme" +
-            " AND s.data >= :date AND s.dataExclusao IS NULL")
+    @Query("SELECT s FROM Sala s  WHERE s.dataExclusao IS NULL")
     List<Sala> listarSalaAtiva();
 
 }

@@ -12,5 +12,5 @@ import java.util.List;
 public interface SalaMapper {
 
     List<SalaResponseDTO> toRespostaDTOList(List<Sala> entities);
-
+    SalaResponseDTO toRespostaDTO(Sala entity);
 }

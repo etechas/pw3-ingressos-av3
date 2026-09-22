@@ -25,7 +25,10 @@ public class SalaController {
     public ResponseEntity<SalaResponseDTO> findById(@PathVariable Long id){
         var result = salaService.findById(id);
         if(result.isPresent()){
-
+            return ResponseEntity.ok(result.get());
+        }
+        else{
+            return ResponseEntity.notFound().build();
         }
     }
 

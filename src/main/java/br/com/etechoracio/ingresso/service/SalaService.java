@@ -25,9 +25,9 @@ public class SalaService {
         return salaMapper.toSalasResponseDTO(salas);
     }
 
-    public SalaResponseDTO findById(Long id){
-        var sala = salaRepository.findByIdSalaAndDataExclusaoIsNull(id);
-        return salaMapper.toSalaResponseDTO(sala);
+    public Optional<SalaResponseDTO> findById(Long id){
+        return salaRepository.findByIdAndDataExclusaoIsNull(id).map(sala -> salaMapper.toSalaResponseDTO(sala));
+
     }
 
 }

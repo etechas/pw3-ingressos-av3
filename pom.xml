@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.6</version>
+		<version>4.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.etechoracio</groupId>
@@ -34,7 +34,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -69,6 +68,12 @@
 			<artifactId>mapstruct</artifactId>
 			<version>1.6.3</version>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 	</dependencies>
@@ -128,15 +133,7 @@
 						</configuration>
 					</execution>
 				</executions>
-                <configuration>
-                    <basedir/>
-                    <buildDirectory/>
-                    <outputDirectory/>
-                    <projectArtifact/>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
+			</plugin>
 		</plugins>
 	</build>
 

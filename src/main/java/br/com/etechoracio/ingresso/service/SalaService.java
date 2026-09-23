@@ -1,5 +1,6 @@
 package br.com.etechoracio.ingresso.service;
 
+import br.com.etechoracio.ingresso.dto.SalaRequestDTO;
 import br.com.etechoracio.ingresso.dto.SalaResponseDTO;
 import br.com.etechoracio.ingresso.enums.SimNaoEnum;
 import br.com.etechoracio.ingresso.mapper.SalaMapper;
@@ -25,5 +26,10 @@ public class SalaService {
     public SalaResponseDTO findById(Long id){
         var result = salaRepository.findByIdAndDataExclusaoIsNull(id).orElseThrow(() -> new RuntimeException("Sala nao encontrada!!"));
         return salaMapper.toRespostaDTO(result);
+    }
+    public SalaResponseDTO criarsala(SalaRequestDTO dto) {
+        var entity = salaMapper.toEntity(dto);
+        var salva = salaRepository.save(entity);
+        return salaMapper.toRespostaDTO(salva);
     }
 }
